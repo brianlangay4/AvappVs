@@ -1,0 +1,39 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:AvappVs.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="AvappVs.Views.MainWindow"
+        x:DataType="vm:MainWindowViewModel"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="AvappVs">
+
+    <Design.DataContext>
+        <!-- This only sets the DataContext for the previewer in an IDE,
+             to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
+        <vm:MainWindowViewModel/>
+    </Design.DataContext>
+
+	<StackPanel>
+		<TextBlock Name="msg" >1</TextBlock>
+		<TextBlock>2</TextBlock>
+
+		<Grid ShowGridLines="True" Margin="5"
+              ColumnDefinitions="120, 100"
+              RowDefinitions="Auto, Auto, Auto">
+		</Grid>
+
+
+		<Grid ShowGridLines="True"  Margin="5"
+              ColumnDefinitions="120, 100"
+              RowDefinitions="Auto, Auto, Auto">
+			<Label Grid.Row="0" Grid.Column="0" Margin="10">Celsius</Label>
+			<TextBox Name="celsius" Grid.Row="0" Grid.Column="1" Margin="0 5" Text="0"/>
+			<Label Grid.Row="1" Grid.Column="0" Margin="10">Fahrenheit</Label>
+			<TextBox Name="fahrenheit" Grid.Row="1"  Grid.Column="1" Margin="0 5" Text="0"/>
+			<Button Name="calc" Click="ClickHandler" Grid.Row="2" Grid.Column="1" Margin="0 5">Calculate</Button>
+		</Grid>
+	</StackPanel>
+
+</Window>
